@@ -1,0 +1,16 @@
+
+
+The time ultility flag is the flag we use to find the real, user and the system times of running the multiprocessor vs the multithreaded code.
+
+Real time comparison :
+
+For a 5000 line csv file 
+Multithreaded - 0.039 seconds
+Multiprocess - 0.230 seconds
+
+For a 2500 line csv file 
+Multithreaded - 0.038 seconds
+Multiprocess - 0.210 seconds
+
+Explanation :
+ When we compared our runtime, the runtime for multithreaded sort is a way faster than the multiprocess sort time as we would expect it to be. The difference between the two run times is not fair because the multithreaded sort is faster than the multiprocess sort. The discrepency lies in the fact that creating a process can consume time and even exhaust the system resources. However creating threads is economical as threads belonging to the same process share the belongings of that process. Yes, the slower one can be made faster by efdecient techniques but multi process sort cannot be made faster than the multithreaded sort. Yes, mergesort is the best option for a multithreaded environment because it has O(nlogn) big O for best, worst and average case scenarios, whereas any other sorting algorithm in the best case does not have as good of a runtime efficiency as mergesort. The best option would be to mergesort each individual files and then apply quicksort to merging all the sorted files. Because all the files are already sorted, quicksort will have a big O of O(n) as compared to mergesorts O(nlogn). 
